@@ -45,7 +45,8 @@ GROUP BY anno;
 ---------------------------------------------
 
 SELECT
+EXTRACT (YEAR FROM data_fattura) AS anno,
 COUNT(*) AS numero_fatture,
 SUM(importo) AS totale_importo
 FROM fatture
-GROUP BY EXTRACT (YEAR FROM data_fattura);
+GROUP BY anno;
